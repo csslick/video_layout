@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>layout</title>
+	<style>
+		*{
+			margin: 0; padding: 0;
+		}
+		section.s1{
+			position: relative;
+			border: 1px solid red;
+		}
+		section.s1 > video{
+			left: 0; top: 0;
+			z-index: 0;
+		}
+		section.s1 > .play_btn{
+			position: absolute;
+			left: 50%; top: 50%;
+			margin-left: -60px;
+			margin-top: -60px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>logo</h1>
+	</header>
+	<section class="s1">
+		<video width="100%" src="UI  UX DESIGN PROCESS.mp4" id="vid"></video>
+		<a href="#" class="play_btn"><img src="play.png" alt="play"></a>
+	</section>
+	
+	<script>
+		var vid = document.getElementById('vid');
+		var play_btn = document.querySelector('.play_btn');
+		play_btn.addEventListener('click', function(){
+			vid.play();
+			
+		});
+	</script>
+</body>
+</html>
